@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Hearts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ynT-3b-bHi" userLabel="Top Collection View" customClass="HeartsCollectionView" customModule="Hearts" customModuleProvider="target">
+                                <rect key="frame" x="320" y="40" width="260" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xXw-9w-nbn" customClass="UICollectionViewRightAlignedLayout">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fZw-ml-a34" userLabel="Bottom Collection View" customClass="HeartsCollectionView" customModule="Hearts" customModuleProvider="target">
+                                <rect key="frame" x="20" y="480" width="260" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x2I-xm-suX" customClass="UICollectionViewLeftAlignedLayout">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ynT-3b-bHi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="T9B-FN-DqA"/>
+                            <constraint firstItem="ynT-3b-bHi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="Xvi-ou-969"/>
+                            <constraint firstItem="fZw-ml-a34" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="c4j-X8-uTE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ynT-3b-bHi" secondAttribute="trailing" constant="20" id="hYc-Fm-Jx9"/>
+                            <constraint firstItem="ynT-3b-bHi" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="1:2" constant="-40" id="hjA-eL-zbw"/>
+                            <constraint firstAttribute="trailing" secondItem="ynT-3b-bHi" secondAttribute="trailing" constant="20" id="p9o-X8-j5G"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fZw-ml-a34" secondAttribute="bottom" constant="20" id="s4m-qi-YVC"/>
+                            <constraint firstItem="fZw-ml-a34" firstAttribute="width" secondItem="ynT-3b-bHi" secondAttribute="width" id="xqS-wm-a5B"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xvi-ou-969"/>
+                                <exclude reference="hYc-Fm-Jx9"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bottomCollectionView" destination="fZw-ml-a34" id="KBN-1j-XYm"/>
+                        <outlet property="topCollectionView" destination="ynT-3b-bHi" id="kGX-Sd-o2O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
