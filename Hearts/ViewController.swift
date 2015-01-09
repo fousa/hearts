@@ -72,6 +72,12 @@ class ViewController: UIViewController, HeartsCollectionViewDataSourceDelegate, 
         popoverController?.permittedArrowDirections = .Down | .Up
         popoverController?.delegate = self
         
+        if collectionView == topCollectionView {
+            popoverController?.permittedArrowDirections = .Up
+        } else {
+            popoverController?.permittedArrowDirections = .Down
+        }
+        
         presentViewController(controller, animated: true, completion: nil)
     }
     
