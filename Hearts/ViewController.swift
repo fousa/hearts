@@ -64,12 +64,6 @@ class ViewController: UIViewController, HeartsCollectionViewDataSourceDelegate, 
         let popoverController = controller.popoverPresentationController
         popoverController?.sourceView = collectionView
         popoverController?.sourceRect = collectionView.convertRect(cell.frame, toView: collectionView)
-        
-        popoverController?.sourceRect = CGRectOffset(popoverController!.sourceRect, -2, 0.0)
-        
-        println("-- rect \(popoverController?.sourceRect)")
-        
-        popoverController?.permittedArrowDirections = .Down | .Up
         popoverController?.delegate = self
         
         if collectionView == topCollectionView {

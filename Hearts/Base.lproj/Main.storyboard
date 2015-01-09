@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ynT-3b-bHi" userLabel="Top Collection View" customClass="HeartsCollectionView" customModule="Hearts" customModuleProvider="target">
-                                <rect key="frame" x="320" y="40" width="260" height="100"/>
+                                <rect key="frame" x="315" y="40" width="260" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KeC-rO-XlF" customClass="HeartsCollectionViewLayout" customModule="Hearts" customModuleProvider="target">
                                     <size key="itemSize" width="50" height="50"/>
@@ -34,7 +34,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fZw-ml-a34" userLabel="Bottom Collection View" customClass="HeartsCollectionView" customModule="Hearts" customModuleProvider="target">
-                                <rect key="frame" x="20" y="480" width="260" height="100"/>
+                                <rect key="frame" x="25" y="480" width="260" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x2I-xm-suX" customClass="HeartsCollectionViewLayout" customModule="Hearts" customModuleProvider="target">
                                     <size key="itemSize" width="50" height="50"/>
@@ -53,10 +53,10 @@
                         <constraints>
                             <constraint firstItem="ynT-3b-bHi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="T9B-FN-DqA"/>
                             <constraint firstItem="ynT-3b-bHi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="Xvi-ou-969"/>
-                            <constraint firstItem="fZw-ml-a34" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="c4j-X8-uTE"/>
+                            <constraint firstItem="fZw-ml-a34" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="25" id="c4j-X8-uTE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ynT-3b-bHi" secondAttribute="trailing" constant="20" id="hYc-Fm-Jx9"/>
                             <constraint firstItem="ynT-3b-bHi" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="1:2" constant="-40" id="hjA-eL-zbw"/>
-                            <constraint firstAttribute="trailing" secondItem="ynT-3b-bHi" secondAttribute="trailing" constant="20" id="p9o-X8-j5G"/>
+                            <constraint firstAttribute="trailing" secondItem="ynT-3b-bHi" secondAttribute="trailing" constant="25" id="p9o-X8-j5G"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fZw-ml-a34" secondAttribute="bottom" constant="20" id="s4m-qi-YVC"/>
                             <constraint firstItem="fZw-ml-a34" firstAttribute="width" secondItem="ynT-3b-bHi" secondAttribute="width" id="xqS-wm-a5B"/>
                         </constraints>
