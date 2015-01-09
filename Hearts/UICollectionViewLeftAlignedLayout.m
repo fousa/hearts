@@ -35,6 +35,13 @@
     self.frame = frame;
 }
 
+- (void)bottomAlignFrame:(CGFloat)y
+{
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
 @end
 
 #pragma mark -
@@ -60,6 +67,13 @@
 
     BOOL isFirstItemInSection = indexPath.item == 0;
     CGFloat layoutWidth = CGRectGetWidth(self.collectionView.frame) - sectionInset.left - sectionInset.right;
+    
+    // Calculate y value.
+    NSInteger totalCount = [self evaluatedItemCount];
+    NSUInteger maximumRowNumber = layoutWidth / 35.0;
+    NSUInteger row = (totalCount - indexPath.item) / maximumRowNumber;
+    CGFloat yValue = row * 35.0;
+    [currentItemAttributes bottomAlignFrame:yValue];
 
     if (isFirstItemInSection) {
         [currentItemAttributes leftAlignFrameWithSectionInset:sectionInset];
@@ -88,6 +102,17 @@
     frame.origin.x = previousFrameRightPoint + [self evaluatedMinimumInteritemSpacingForItemAtIndex:indexPath.row];
     currentItemAttributes.frame = frame;
     return currentItemAttributes;
+}
+
+- (NSUInteger)evaluatedItemCount
+{
+    if ([self.collectionView.dataSource respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
+        id<UICollectionViewDataSource> datasource = (id<UICollectionViewDataSource>)self.collectionView.dataSource;
+        
+        return [datasource collectionView:self.collectionView numberOfItemsInSection:0];
+    } else {
+        return 0;
+    }
 }
 
 - (CGFloat)evaluatedMinimumInteritemSpacingForItemAtIndex:(NSInteger)index
