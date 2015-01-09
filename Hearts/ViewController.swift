@@ -34,8 +34,11 @@ class ViewController: UIViewController {
         topCollectionViewDataSource.count = 7
         bottomCollectionViewDataSource.count = 7
         
-        topCollectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
-        bottomCollectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
+        let nib = UINib(nibName: "HeartsCollectionViewCell", bundle: nil)
+        topCollectionView.registerNib(nib, forCellWithReuseIdentifier: "Cell")
+        bottomCollectionView.registerNib(nib, forCellWithReuseIdentifier: "Cell")
+//        topCollectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
+//        bottomCollectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
         
         topCollectionView.delegate = topCollectionViewDataSource
         topCollectionView.dataSource = topCollectionViewDataSource

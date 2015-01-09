@@ -16,6 +16,7 @@
 		62CAE4451A5D8FAC007F944C /* HeartsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CAE4441A5D8FAC007F944C /* HeartsCollectionView.swift */; };
 		62E26F1F1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E26F1E1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift */; };
 		62E26F211A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E26F201A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift */; };
+		62E26F231A6007DE0021C7AE /* HeartsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		62CAE4441A5D8FAC007F944C /* HeartsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartsCollectionView.swift; sourceTree = "<group>"; };
 		62E26F1E1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartsCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		62E26F201A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeartsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				6285A1061A5D76940048D169 /* Main.storyboard */,
 				6285A10B1A5D76940048D169 /* LaunchScreen.xib */,
+				62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */,
 				6285A1091A5D76940048D169 /* Images.xcassets */,
 			);
 			name = UI;
@@ -160,6 +163,7 @@
 				6285A1081A5D76940048D169 /* Main.storyboard in Resources */,
 				6285A10D1A5D76940048D169 /* LaunchScreen.xib in Resources */,
 				6285A10A1A5D76940048D169 /* Images.xcassets in Resources */,
+				62E26F231A6007DE0021C7AE /* HeartsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

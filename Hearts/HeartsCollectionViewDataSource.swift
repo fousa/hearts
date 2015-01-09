@@ -22,12 +22,11 @@ class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, Hear
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as UICollectionViewCell
-        cell.backgroundColor = UIColor.redColor()
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(30.0, 30.0)
+        return CGSizeMake(23.0, 23.0)
     }
     
     func collectionViewInterItemSpacing(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGFloat {

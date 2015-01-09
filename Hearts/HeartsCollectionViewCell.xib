@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICollectionViewCell"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UICollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart-4" translatesAutoresizingMaskIntoConstraints="NO" id="NCA-pl-VnR">
+                    <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NCA-pl-VnR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ltf-EL-ve0"/>
+                <constraint firstItem="NCA-pl-VnR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="M2a-e5-Rb1"/>
+                <constraint firstAttribute="trailing" secondItem="NCA-pl-VnR" secondAttribute="trailing" id="Yfa-hb-h2O"/>
+                <constraint firstAttribute="bottom" secondItem="NCA-pl-VnR" secondAttribute="bottom" id="y2j-93-AlU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="246.5" y="379.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Heart-4" width="23" height="21"/>
+    </resources>
+</document>
