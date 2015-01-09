@@ -29,8 +29,12 @@ class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, Hear
         return CGSizeMake(23.0, 23.0)
     }
     
+    func collectionViewItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGSize {
+        return CGSizeMake(23.0, 23.0)
+    }
+    
     func collectionViewInterItemSpacing(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGFloat {
-        return 5.0
+        return 10.0
     }
 
 }

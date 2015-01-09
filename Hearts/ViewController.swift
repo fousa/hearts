@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topCollectionViewDataSource.count = 7
+        topCollectionViewDataSource.count = 13
         bottomCollectionViewDataSource.count = 7
         
         let nib = UINib(nibName: "HeartsCollectionViewCell", bundle: nil)

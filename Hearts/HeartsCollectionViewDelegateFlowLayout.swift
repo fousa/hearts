@@ -8,6 +8,7 @@
 
 import UIKit
 
-protocol HeartsCollectionViewDelegateFlowLayout: UICollectionViewDelegateFlowLayout {
+@objc protocol HeartsCollectionViewDelegateFlowLayout: UICollectionViewDelegateFlowLayout {
     func collectionViewInterItemSpacing(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGFloat
+    func collectionViewItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGSize
 }

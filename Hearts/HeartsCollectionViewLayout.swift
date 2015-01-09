@@ -16,7 +16,7 @@ import UIKit
     private var maximumRowItems = 0
     private var maximumRows = 0
     private var width: CGFloat = 0.0
-    private var itemWidth: CGFloat = 0.0
+    private var collectionItemSize = CGSizeZero
     private var itemSpacing: CGFloat = 0.0
     
     // MARK: Inspectables
@@ -30,16 +30,18 @@ import UIKit
         super.prepareLayout()
         
         count = self.collectionView?.numberOfItemsInSection(0) ?? 0
+        if let delegate = self.collectionView?.delegate as? HeartsCollectionViewDelegateFlowLayout {
+            collectionItemSize = delegate.collectionViewItemSize(self.collectionView!, layout: self)
+            itemSpacing = delegate.collectionViewInterItemSpacing(self.collectionView!, layout: self)
+        }
         width = (self.collectionView?.frame.size.width ?? 0.0)
-        itemWidth = 30.0
-        itemSpacing = 5.0
-        maximumRowItems = Int(width / (itemWidth + itemSpacing))
+        maximumRowItems = Int(width / (collectionItemSize.width + itemSpacing))
         maximumRows = Int(floor(Float(count) / Float(maximumRowItems)))
     }
     
     override func collectionViewContentSize() -> CGSize {
         let totalRows = ceilf(Float(count) / Float(maximumRowItems))
-        return CGSizeMake(width, CGFloat(totalRows) * (itemWidth + itemSpacing))
+        return CGSizeMake(width, CGFloat(totalRows) * (collectionItemSize.height + itemSpacing) - itemSpacing)
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
@@ -59,10 +61,10 @@ import UIKit
         var x: CGFloat = 0.0
         if alignRight {
             let column = CGFloat(maximumRowItems - indexPath.item % maximumRowItems)
-            x = (itemWidth + itemSpacing) * CGFloat(column) - itemWidth
+            x = (collectionItemSize.width + itemSpacing) * CGFloat(column) - itemSpacing
         } else {
             let column = CGFloat(indexPath.item % maximumRowItems)
-            x = (itemWidth + itemSpacing) * CGFloat(column)
+            x = (collectionItemSize.width + itemSpacing) * CGFloat(column)
         }
         currentAttributes.frame.origin.x = x
         
@@ -73,7 +75,7 @@ import UIKit
         } else {
             row = Float(floor(CGFloat(indexPath.item) / CGFloat(maximumRowItems)))
         }
-        let y = CGFloat(row) * (itemWidth + itemSpacing)
+        let y = CGFloat(row) * (collectionItemSize.height + itemSpacing)
         currentAttributes.frame.origin.y = y
         
         return currentAttributes
