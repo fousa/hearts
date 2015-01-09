@@ -14,6 +14,7 @@ import UIKit
     
     private var count = 0
     private var maximumRowItems = 0
+    private var maximumRows = 0
     private var width: CGFloat = 0.0
     private var itemWidth: CGFloat = 0.0
     private var itemSpacing: CGFloat = 0.0
@@ -33,10 +34,11 @@ import UIKit
         itemWidth = 30.0
         itemSpacing = 5.0
         maximumRowItems = Int(width / (itemWidth + itemSpacing))
+        maximumRows = Int(floor(Float(count) / Float(maximumRowItems)))
     }
     
     override func collectionViewContentSize() -> CGSize {
-        let totalRows = round(Float(count) / Float(maximumRowItems))
+        let totalRows = ceilf(Float(count) / Float(maximumRowItems))
         return CGSizeMake(width, CGFloat(totalRows) * (itemWidth + itemSpacing))
     }
     
@@ -52,16 +54,25 @@ import UIKit
     
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
         let currentAttributes = super.layoutAttributesForItemAtIndexPath(indexPath)
-
+        
         // Set the correct x value.
-        let correctHorizontalAlignment = alignRight ? indexPath.item : (count - indexPath.item)
-        let column = Int(correctHorizontalAlignment) % maximumRowItems
-        let x = width - itemWidth - (itemWidth + itemSpacing) * CGFloat(column)  - itemSpacing
+        var x: CGFloat = 0.0
+        if alignRight {
+            let column = CGFloat(maximumRowItems - indexPath.item % maximumRowItems)
+            x = (itemWidth + itemSpacing) * CGFloat(column) - itemWidth
+        } else {
+            let column = CGFloat(indexPath.item % maximumRowItems)
+            x = (itemWidth + itemSpacing) * CGFloat(column)
+        }
         currentAttributes.frame.origin.x = x
         
+        var row: Float = 0.0
         // Set the correct y value.
-        let correctVerticalAlignment = alignBottom ? (count - indexPath.item): indexPath.item
-        let row = correctVerticalAlignment / maximumRowItems
+        if alignBottom {
+            row = Float(maximumRows) - floor(Float(indexPath.item) / Float(maximumRowItems))
+        } else {
+            row = Float(floor(CGFloat(indexPath.item) / CGFloat(maximumRowItems)))
+        }
         let y = CGFloat(row) * (itemWidth + itemSpacing)
         currentAttributes.frame.origin.y = y
         
