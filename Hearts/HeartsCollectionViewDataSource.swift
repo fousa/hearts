@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol HeartsCollectionViewDataSourceDelegate {
+    func heartsCollectionView(collectionView: HeartsCollectionView, didPressHeart heartIndex: Int, withCell cell: UICollectionViewCell)
+}
+
 class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, HeartsCollectionViewDelegateFlowLayout {
     
     // MARK: - Public
     
+    var delegate: HeartsCollectionViewDataSourceDelegate?
     var count: Int = 0
     
     // MARK: - UICollectionView
@@ -27,6 +32,11 @@ class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, Hear
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(23.0, 23.0)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)!
+        self.delegate?.heartsCollectionView(collectionView as HeartsCollectionView, didPressHeart: indexPath.item, withCell: cell)
     }
     
     func collectionViewItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGSize {

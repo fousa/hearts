@@ -17,6 +17,8 @@
 		62E26F1F1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E26F1E1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift */; };
 		62E26F211A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E26F201A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift */; };
 		62E26F231A6007DE0021C7AE /* HeartsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */; };
+		62E26F251A601A5E0021C7AE /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E26F241A601A5E0021C7AE /* PopoverViewController.xib */; };
+		62E26F271A601B500021C7AE /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E26F261A601B500021C7AE /* PopoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		62E26F1E1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartsCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		62E26F201A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeartsCollectionViewCell.xib; sourceTree = "<group>"; };
+		62E26F241A601A5E0021C7AE /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		62E26F261A601B500021C7AE /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			children = (
 				6285A1021A5D76940048D169 /* AppDelegate.swift */,
 				6285A1041A5D76940048D169 /* ViewController.swift */,
+				62E26F261A601B500021C7AE /* PopoverViewController.swift */,
 				6285A1311A5D78A00048D169 /* Collection View */,
 				6285A1221A5D76CD0048D169 /* UI */,
 				6285A1001A5D76940048D169 /* Supporting Files */,
@@ -87,6 +92,7 @@
 				6285A1061A5D76940048D169 /* Main.storyboard */,
 				6285A10B1A5D76940048D169 /* LaunchScreen.xib */,
 				62E26F221A6007DE0021C7AE /* HeartsCollectionViewCell.xib */,
+				62E26F241A601A5E0021C7AE /* PopoverViewController.xib */,
 				6285A1091A5D76940048D169 /* Images.xcassets */,
 			);
 			name = UI;
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6285A1081A5D76940048D169 /* Main.storyboard in Resources */,
+				62E26F251A601A5E0021C7AE /* PopoverViewController.xib in Resources */,
 				6285A10D1A5D76940048D169 /* LaunchScreen.xib in Resources */,
 				6285A10A1A5D76940048D169 /* Images.xcassets in Resources */,
 				62E26F231A6007DE0021C7AE /* HeartsCollectionViewCell.xib in Resources */,
@@ -176,6 +183,7 @@
 			files = (
 				6285A1331A5D78ED0048D169 /* HeartsCollectionViewDataSource.swift in Sources */,
 				6285A1051A5D76940048D169 /* ViewController.swift in Sources */,
+				62E26F271A601B500021C7AE /* PopoverViewController.swift in Sources */,
 				62E26F1F1A5FD0EC0021C7AE /* HeartsCollectionViewDelegateFlowLayout.swift in Sources */,
 				6285A1031A5D76940048D169 /* AppDelegate.swift in Sources */,
 				62E26F211A5FD22A0021C7AE /* HeartsCollectionViewLayout.swift in Sources */,
@@ -287,11 +295,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Jelle Vandebeeck (DR39Q8437E)";
 				INFOPLIST_FILE = Hearts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "012bdb02-48b6-4f8a-abca-13bb16620c58";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -303,7 +314,9 @@
 				INFOPLIST_FILE = Hearts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "012bdb02-48b6-4f8a-abca-13bb16620c58";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
