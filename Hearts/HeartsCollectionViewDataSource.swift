@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, HeartsCollectionViewDelegateFlowLayout {
     
     // MARK: - Public
     
@@ -30,11 +30,7 @@ class HeartsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICo
         return CGSizeMake(30.0, 30.0)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 5.0
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionViewInterItemSpacing(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout) -> CGFloat {
         return 5.0
     }
 
